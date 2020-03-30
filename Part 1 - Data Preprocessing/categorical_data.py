@@ -7,12 +7,12 @@ import pandas as pd
 
 # Importing the dataset
 dataset = pd.read_csv(r'D:\Github\Machine-Learning-A-Z-Udemy\Part 1 - Data Preprocessing\Data.csv')
-X = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, 3].values
+X = dataset.iloc[:, :-1].values   '''all rows;all columns except last one ~ dependent attributes'''
+y = dataset.iloc[:, 3].values   '''last column alone ~ independent attribute'''
 
 # Taking care of missing data
 from sklearn.impute import SimpleImputer
-missingvalues = SimpleImputer(missing_values = np.nan, strategy = 'mean', verbose = 0)
+missingvalues = SimpleImputer(missing_values = np.nan, strategy = 'mean', verbose = 0)  #‘NaN’ was replaced by ‘np.nan’
 missingvalues = missingvalues.fit(X[:, 1:3])
 X[:, 1:3]=missingvalues.transform(X[:, 1:3])
 
