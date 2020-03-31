@@ -33,6 +33,9 @@ X = np.array(ct.fit_transform(X), dtype=np.float)
 from sklearn.preprocessing import LabelEncoder
 y = LabelEncoder().fit_transform(y)
 
+
+
+
 '''
 #OLDER VERSION
 # Encoding categorical data
