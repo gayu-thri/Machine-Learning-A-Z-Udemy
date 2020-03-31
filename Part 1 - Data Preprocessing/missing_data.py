@@ -12,8 +12,12 @@ y = dataset.iloc[:, 3].values
 
 # Taking care of missing data
 from sklearn.impute import SimpleImputer
-imputer = SimpleImputer(missing_values = 'np.nan', strategy = 'mean', axis = 0)  #mean is the default value for strategy
-imputer = imputer.fit(X[:, 1:3]) #columns with missing data
-X[:, 1:3] = imputer.transform(X[:, 1:3]) #replaces
- 
+missingvalues = SimpleImputer(missing_values = np.nan, strategy = 'mean', verbose = 0)  #‘NaN’ was replaced by ‘np.nan’
+
+''' columns with missing data '''
+missingvalues = missingvalues.fit(X[:, 1:3])    
+'''1:3 => 3 not included'''
+''' replaces missing data with mean '''
+X[:, 1:3]=missingvalues.transform(X[:, 1:3])
+
         #scikit learn -
