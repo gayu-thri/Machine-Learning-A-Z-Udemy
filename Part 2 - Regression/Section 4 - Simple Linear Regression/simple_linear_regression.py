@@ -37,7 +37,7 @@ plt.show()
 
 #visualizing test set results using CHARTS
 plt.scatter(X_test, y_test, color = 'red')
-#same regression line even with test
+#same regression line even with X_test
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary VS Experience(Training set)')
 plt.xlabel('Years of Experience')
